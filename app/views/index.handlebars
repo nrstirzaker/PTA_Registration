@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="form-group">
+    <h1>{{title }}</h1>
+    <p>Welcome to {{title }}</p>
+    <form>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" name="email">
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary btn-space">Register</button>
+        <button type="button" class="btn btn-primary btn-space">Update Details</button>
+        <button type="button" class="btn btn-primary btn-space">Unregister</button>
+      </div>
+      <p />
+      <div id="dataSection">
+        <div class="form-group">
+
+          <label for="fullName">Full Name</label>
+          <input type="text" class="form-control" name="fullName" width="100">
+        </div>
+        <div class="form-group">
+
+          <label for="youngestChild">Name of youngest child at the school</label>
+
+          <input type="input" class="form-control" name="youngestChild" width="100"></p>
+
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+    
+            <label for="schoolYear">
+              School year of youngest child at school*
+            </label>
+
+            <select name="year" class="form-control" name="schoolYear">
+              <option value="yr7">Year 7</option>
+              <option value="yr8">Year 8</option>
+              <option value="yr9">Year 9</option>
+              <option value="yr10">Year 10</option>
+              <option value="yr11">Year 11</option>
+              <option value="yr12">Year 12</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group form-check">
+
+          <label for="committee ">
+            <input type="checkbox" class="form-check-input" name="committee">I'd like to join the
+            committee
+          </label>
+        </div>
+        <div class="form-group form-check">
+          <label for="helper">
+            <input type="checkbox" class="form-check-input" name="helper">I'd like to join the helper's list
+          </label>
+        </div>
+        <div class="form-group form-check">
+          <label for="event">
+            <input type="checkbox" class="form-check-input" name="event">I'd like to help organise a specific event
+          </label>
+        </div>
+        <div class="form-group form-check">
+          <label for="uniform">
+            <input type="checkbox" class="form-check-input" name="uniform">I'd like to help with 2nd Hand Uniforms
+          </label>
+        </div>
+        <div class="form-group form-check">
+          <label for="information">
+            <input type="checkbox" class="form-check-input" name="information">I'd like to recieve more information
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="contactNumber">Contact Number</label>
+          <input type="text" class="form-control" name="contactNumber">
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary btn-space">Submit</button>
+        <button type="reset" class="btn btn-outline-warning btn-space">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
