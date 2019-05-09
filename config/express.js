@@ -13,6 +13,7 @@ module.exports = (app, config) => {
   const env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
+  app.locals.ENV_TEST = env == 'test';
   
   app.engine('handlebars', exphbs({
     layoutsDir: config.root + '/app/views/layouts/',
@@ -44,7 +45,7 @@ module.exports = (app, config) => {
     next(err);
   });
 
-  if (app.get('env') === 'development') {
+  if (app.get('env') != 'prod') {
     app.use((err, req, res, next) => {
       res.status(err.status || 500);
       res.render('error', {

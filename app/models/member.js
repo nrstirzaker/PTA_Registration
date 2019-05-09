@@ -3,10 +3,8 @@
 
 module.exports = (sequelize, DataTypes) => {
 
-  const Article = sequelize.define('Article', {
-    title: DataTypes.STRING,
-    url: DataTypes.STRING,
-    text: DataTypes.STRING
+  const Member = sequelize.define('Member', {
+    email: DataTypes.STRING
   }, {
     classMethods: {
       associate: (models) => {
@@ -16,6 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  return Article;
+  return Member;
 };
 

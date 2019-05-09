@@ -19,6 +19,23 @@ const config = {
     }
   },
 
+  uat: {
+    root: rootPath,
+    app: {
+      name: 'fcc-pta-registration'
+    },
+    port: process.env.PORT || 3000,
+    db: {
+    "username": process.env.username,
+    "password": process.env.password,
+    "database": process.env.database,
+    "host": process.env.host,
+    "port": process.env.port,
+    "dialect": process.env.dialect
+    }
+  },
+
+
   test: {
     root: rootPath,
     app: {
@@ -34,7 +51,14 @@ const config = {
       name: 'fcc-pta-registration'
     },
     port: process.env.PORT || 3000,
-    db: 'postgres://localhost/fcc-pta-registration-production'
+    db: {
+      "username": process.env.username,
+      "password": process.env.password,
+      "database": process.env.database,
+      "host": process.env.host,
+      "port": process.env.port,
+      "dialect": process.env.dialect
+      }
   }
 };
 
