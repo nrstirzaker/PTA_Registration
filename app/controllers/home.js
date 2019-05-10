@@ -7,7 +7,7 @@ module.exports = (app) => {
 };
 
 router.get('/', (req, res, next) => {
-  db.Article.findAll().then((articles) => {
+  db.Member.findAll().then((articles) => {
     res.render('index', {
       title: "Friends of Christ's College (PTA) Registration Page",
       articles: articles
