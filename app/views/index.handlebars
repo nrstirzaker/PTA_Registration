@@ -1,25 +1,30 @@
 <div class="container">
   <div class="form-group">
-    <h1>{{title }}</h1>
+    <h1>{{title}}</h1>
     <p>Welcome to {{title }}</p>
-    <form>
+
+    <form method="post" action="api/registerMember">
+
+      <div class="form-group">
+        <label for="uuid">UUID</label>
+        <input type="text" class="form-control" name="uuid" value={{uuid}}>
+      </div>
 
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" name="email">
+        <input type="email" class="form-control" name="email" value={{email}}>
       </div>
 
       <div class="btn-group">
-        <button type="button" class="btn btn-primary btn-space expanding">Register</button>
+        <button type="button" class="btn btn-primary btn-space expanding" id="register">Register</button>
         <button type="button" class="btn btn-primary btn-space expanding">Update Details</button>
-        <button type="button" class="btn btn-primary btn-space" id="unregister" >Unregister</button>
+        <button type="button" class="btn btn-primary btn-space" id="unregister">Unregister</button>
       </div>
       <p />
       <div id="dataSection">
         <div class="form-group">
-
           <label for="fullName">Full Name</label>
-          <input type="text" class="form-control" name="fullName" width="100">
+          <input type="text" class="form-control" name="fullName" width="100" value={{fullName}}>
         </div>
         <div class="form-group">
 
@@ -35,7 +40,7 @@
               School year of youngest child at school*
             </label>
 
-            <select name="year" class="form-control" name="schoolYear">
+            <select class="form-control" name="schoolYear">
               <option value="yr7">Year 7</option>
               <option value="yr8">Year 8</option>
               <option value="yr9">Year 9</option>
@@ -48,7 +53,7 @@
 
         <div class="form-group form-check">
 
-          <label for="committee ">
+          <label for="committee">
             <input type="checkbox" class="form-check-input" name="committee">I'd like to join the
             committee
           </label>
@@ -77,12 +82,18 @@
           <label for="contactNumber">Contact Number</label>
           <input type="text" class="form-control" name="contactNumber">
         </div>
-      </div>
+        <div class="form-group form-check">
+          <label for="agreedPrivacyPolicy">
+            <input type="checkbox" class="form-check-input" name="agreedPrivacyPolicy">By selecting this box you agree with our
+            privacy policy
+          </label>
+        </div>
 
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary btn-space">Submit</button>
-        <button type="reset" class="btn btn-outline-warning btn-space">Cancel</button>
-      </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary btn-space">Submit</button>
+          <button type="reset" class="btn btn-outline-warning btn-space">Cancel</button>
+        </div>
     </form>
   </div>
 </div>
