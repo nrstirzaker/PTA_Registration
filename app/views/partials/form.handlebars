@@ -1,0 +1,98 @@
+<div id="dataSection">
+    <form method="post" action="/api/member" enctype="application/x-www-form-urlencoded">
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="id" value="{{id}}">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="email" value="{{email}}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="createdOn" value="{{formatAuditTimestamp createdOn}}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="updatedOn" value="{{formatAuditTimestamp updatedOn}}">
+        </div>
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" name="fullName" width="100" value="{{fullName}}">
+        </div>
+        <div class="form-group">
+
+            <label for="fullNameYoungestChild">Full name of youngest child at the school</label>
+
+            <input type="input" class="form-control" name="fullNameYoungestChild" width="100"
+                value="{{fullNameYoungestChild}}"></p>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+
+                <label for="schoolYear">
+                    School year of youngest child at school*
+                </label>
+
+                <select class="form-control" name="schoolYear">
+                    <option value="{{schoolYear}}" hidden="hidden" selected="selected">{{schoolYear}}</option>
+                    <option value="">Please Select</option>
+                    <option value="yr7">Year 7</option>
+                    <option value="yr8">Year 8</option>
+                    <option value="yr9">Year 9</option>
+                    <option value="yr10">Year 10</option>
+                    <option value="yr11">Year 11</option>
+                    <option value="yr12">Year 12</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group form-check">
+            <label for="committee">
+                <input type="checkbox" class="form-check-input" name="committee" 
+                {{checked committee }}>I'd like to join the committee
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label for="helper">
+                <input type="checkbox" class="form-check-input" name="helper" 
+                {{checked helper}}>I'd like to join the helper's list
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label for="specificEvent">
+                <input type="checkbox" class="form-check-input" name="specificEvent" 
+                {{checked specificEvent}}>I'd like to help organise a specific event
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label for="secondHandUniform">
+                <input type="checkbox" class="form-check-input" name="secondHandUniform" 
+                {{checked secondHandUniform}}>I'd like to help with 2nd Hand Uniforms
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label for="information">
+                <input type="checkbox" class="form-check-input" name="information" 
+                {{checked information}}
+                >I'd like to recieve more information
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" class="form-control" name="contactNumber" value={{contactNumber}}>
+        </div>
+        <div class="form-group form-check">
+            <label for="agreedPrivacyPolicy">
+                <input type="checkbox" class="form-check-input" name="agreedPrivacyPolicy"
+                    {{checked agreedPrivacyPolicy}}>By selecting this box you
+                agree with our privacy policy
+            </label>
+        </div>
+
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary btn-space">Submit</button>
+            <button type="reset" class="btn btn-outline-warning btn-space">Cancel</button>
+        </div>
+    </form>
+</div>

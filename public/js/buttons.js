@@ -1,14 +1,16 @@
 $(document).ready(function () {
 
+    //$("#dataSection").css("visibility", "hidden");
+
     $(":input.expanding").click(function () {
         
-        console.log("email=" + $("input[name=email]"));
-        $.get("/api/getMember?email=" + $("input[name=email]").val(),function(text){
+        console.log("searchEmail=" + $("input[name=searchEmail]"));
+        $.get("/member?searchEmail=" + $("input[name=searchEmail]").val(),function(text){
             if(text){
                 $('body').html(text);
                 $("#dataSection").css("visibility", "visible");
             } else {
-                $('body').html('Error');
+                $('.message').html('Error');
             }
         });
     });
@@ -28,11 +30,30 @@ $(document).ready(function () {
         $('#myModal').modal('show')
     });
 
+    $("#register").click(function () {
+
+        $('#confirmationChildsName').val("");
+        $('form').attr('method',"post");
+        
+    });
+
+    $("#update").click(function () {
+
+        $('#confirmationChildsName').val("");
+        $('form').attr('method',"put");
+        
+    });
 
     $("#unregister").click(function () {
 
         $('#confirmationChildsName').val("");
         $('#myModal').modal('show')
+    });
+
+    $("input[name=searchEmail]").change(function () {
+
+        $("input[name=email]").val($("input[name=searchEmail]").val());
+
     });
 
     $("#modalClose").click(function () {

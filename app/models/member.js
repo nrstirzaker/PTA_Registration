@@ -9,26 +9,26 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     email: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(128),
       field: 'email',
       allowNull : false,
       unique: true
     },
     fullName: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(128),
       field: 'full_name',
       allowNull : false
     },
     fullNameYoungestChild: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(128),
       field: 'full_name_youngest_child'
     },
     schoolYear: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(4),
       field: 'school_year'
     },
     contactNumber: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(11),
       field: 'contact_number'
     },
     committee: {
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     helper: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      defaultValue: 'helper'
     },
     specificEvent: {
       type: DataTypes.BOOLEAN,
@@ -61,6 +61,10 @@ module.exports = (sequelize, DataTypes) => {
     createdOn: {
       type: DataTypes.DATE,
       field: 'created_on'
+    },
+    updatedOn: {
+      type: DataTypes.DATE,
+      field: 'updated_on'
     }
   }, {
       freezeTableName: true, // Model tableName will be the same as the model name
