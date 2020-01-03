@@ -1,18 +1,18 @@
 <div id="dataSection">
-    <form method="post" action="/api/member" enctype="application/x-www-form-urlencoded">
+    <form id="mainForm" method="post" enctype="application/x-www-form-urlencoded" data-parsley-validate="">
 
         <div class="form-group">
-            <input type="text" class="form-control" name="id" value="{{id}}">
+            <input type="text" class="form-control" name="id" hidden="true" value="{{id}}">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" name="email" value="{{email}}">
+            <input type="text" class="form-control" name="email" hidden="true" value="{{email}}">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="createdOn" value="{{formatAuditTimestamp createdOn}}">
+            <input type="text" class="form-control" name="createdOn" hidden="true" value="{{formatAuditTimestamp createdOn}}">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="updatedOn" value="{{formatAuditTimestamp updatedOn}}">
+            <input type="text" class="form-control" name="updatedOn" hidden="true" value="{{formatAuditTimestamp updatedOn}}">
         </div>
         <div class="form-group">
             <label for="fullName">Full Name</label>
@@ -23,7 +23,7 @@
             <label for="fullNameYoungestChild">Full name of youngest child at the school</label>
 
             <input type="input" class="form-control" name="fullNameYoungestChild" width="100"
-                value="{{fullNameYoungestChild}}"></p>
+                value="{{fullNameYoungestChild}}" data-parsley-trigger="change" required=""></p>
 
         </div>
         <div class="form-row">
@@ -33,7 +33,7 @@
                     School year of youngest child at school*
                 </label>
 
-                <select class="form-control" name="schoolYear">
+                <select class="form-control" name="schoolYear" >
                     <option value="{{schoolYear}}" hidden="hidden" selected="selected">{{schoolYear}}</option>
                     <option value="">Please Select</option>
                     <option value="yr7">Year 7</option>
@@ -83,16 +83,22 @@
         </div>
         <div class="form-group form-check">
             <label for="agreedPrivacyPolicy">
-                <input type="checkbox" class="form-check-input" name="agreedPrivacyPolicy"
+                <input type="checkbox" class="form-check-input" name="agreedPrivacyPolicy" 
                     {{checked agreedPrivacyPolicy}}>By selecting this box you
-                agree with our privacy policy
+                agree with our <a href="PrivacyPolicy.html">privacy policy</a>
+            </label>
+        </div>
+        <div class="form-group form-check" hidden="true">
+            <label for="testOnly">
+                <input type="checkbox" class="form-check-input"  name="testOnly"
+                    {{checked testOnly}}>Test Only
             </label>
         </div>
 
 
         <div class="btn-group">
-            <button type="submit" class="btn btn-primary btn-space">Submit</button>
-            <button type="reset" class="btn btn-outline-warning btn-space">Cancel</button>
+            <button type="submit" id="submit" class="btn btn-primary btn-space">Submit</button>
+            <button type="cancel" class="btn btn-outline-warning btn-space">Cancel</button>
         </div>
     </form>
 </div>

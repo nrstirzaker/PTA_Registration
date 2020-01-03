@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../models');
-const datasource = require('../modules/datasource');
+const db = require('../../models');
+const datasource = require('../../modules/datasource');
 const moment = require('moment');
 
 
@@ -59,6 +59,7 @@ router.get('/member', (req, res, next) => {
         secondHandUniform: member.secondHandUniform || "false",
         information: member.information || "false",
         agreedPrivacyPolicy: member.agreedPrivacyPolicy || "false",
+        testOnly: member.testOnly || "false",
         createdOn: member.createdOn,
         updatedOn: member.updatedOn
 
@@ -97,6 +98,7 @@ router.get('/api/member', (req, res, next) => {
         secondHandUniform: member.secondHandUniform || "false",
         information: member.information || "false",
         agreedPrivacyPolicy: member.agreedPrivacyPolicy || "false",
+        testOnly: member.testOnlyS || "false",
         createdOn: member.createdOn,
         updatedOn: member.updatedOn
 

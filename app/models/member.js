@@ -58,6 +58,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       field: 'agreed_privacy_policy'
     },
+    testOnly: {
+      type: DataTypes.BOOLEAN,
+      field: 'test_only'
+    },
     createdOn: {
       type: DataTypes.DATE,
       field: 'created_on'

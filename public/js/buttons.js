@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    $("form :input").attr("autocomplete", "off");
     //$("#dataSection").css("visibility", "hidden");
 
     $(":input.expanding").click(function () {
@@ -24,23 +25,48 @@ $(document).ready(function () {
     //         });
     // });
 
-    $(".Submit").click(function () {
-        
+    //$("#submit").click(function () {
+    $("#submit").click(function(event) { 
+        event.preventDefault();
         $('#confirmationChildsName').val("");
-        $('#myModal').modal('show')
+        var f = $('#mainForm');
+        f.parsley().validate();
+        if (f.parsley().isValid()) {
+            $.ajax({
+                type: "POST",
+                url: "/api/member",
+                data: f.serialize(),
+                success: function(){
+                    console.log("posted");
+                    $('#searchEmail').val("");
+                    var mainForm = $('#mainForm')[0];
+                    mainForm.reset(); //throws error is you have a "reset" button
+                    //$("#dataSection").css("visibility", "hidden");
+                    //document.getElementById("mainForm").reset()
+                    $(window).scrollTop(0);
+                    return false;
+                    //location.reload();
+                    
+                    //location.reload();
+                }
+              });
+            //return true; 
+          };
+
+  
     });
 
     $("#register").click(function () {
 
         $('#confirmationChildsName').val("");
-        $('form').attr('method',"post");
+        //$('form').attr('method',"post");
         
     });
 
     $("#update").click(function () {
 
         $('#confirmationChildsName').val("");
-        $('form').attr('method',"put");
+        //$('form').attr('method',"put");
         
     });
 

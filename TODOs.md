@@ -1,0 +1,17 @@
+## To Do
+- [x] Database Integrity
+- [ ] Ajax Update
+    - [ ] Form should reset on save 
+- [ ] Ajax Register
+    - [ ] Form should reset on save
+- [ ] Validation
+    - [ ] Display Message
+- [ ] Cancel button 
+    - [ ] should reset
+    - [ ] should roll up form
+- [ ] Privacy Policy as Footer
+- [ ] Check Unregister works
+- [ ] Tests
+- [ ] Mark test records as "test_only"
+- [ ] Enrolment sends email 
+- [ ] Auto test and deployment

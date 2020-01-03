@@ -7,8 +7,10 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\app.js",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:4200",
+            "sourceMaps": true,
+            "program": "${workspaceFolder}\\app\\server.js",
             "outputCapture": "std"
         }
     ]

@@ -1,10 +1,33 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:#182f59;
+  color:white;
 }
+
+
 
 a {
   color: #00B7FF;
+}
+
+.btn {
+  background-color:#ecc33d;
+  border-color:#ecc33d;
+}
+
+.btn-primary:hover {
+  background-color:#f0d067;
+  border-color:#f0d067;
+  
+}
+
+.btn-outline-warning{
+  color:white;
+}
+
+input:invalid {
+  background: hsla(0, 90%, 70%, 1);
 }
 
 .btn-space {
