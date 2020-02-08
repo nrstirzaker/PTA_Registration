@@ -42,7 +42,14 @@ const config = {
       name: 'fcc-pta-registration'
     },
     port: process.env.PORT || 3000,
-    db: 'postgres://localhost/fcc-pta-registration-test'
+    db: {
+      "username": "nrsti",
+      "password": "xfiles",
+      "database": "registration",
+      "host": "127.0.0.1",
+      "port": 5432,
+      "dialect": "postgres"
+      }
   },
 
   production: {
