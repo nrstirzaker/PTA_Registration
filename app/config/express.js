@@ -23,7 +23,7 @@ module.exports = (app, config) => {
   
   app.use(require('express-bunyan-logger').errorLogger());
 
-  const member = require('../routes/api/member')(app);
+  const member = require('../routes/api/memberAirTable')(app);
 
   //app.use('/api/member', member);
 

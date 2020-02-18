@@ -1,1 +1,1 @@
-run nodemon rom debugger
+run nodemon from debugger
