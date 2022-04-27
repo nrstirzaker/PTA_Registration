@@ -40,7 +40,7 @@
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "debug": "^2.2.0",
-    "grunt": "^1.0.1",
+    "grunt": "^1.5.2",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-develop": "^0.4.0",
     "load-grunt-tasks": "^3.2.0",
